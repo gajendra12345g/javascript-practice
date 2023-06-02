@@ -21,7 +21,7 @@ const uniqueByName = Array.from(new Set(colorsArray.map(color => color.name)))
 const filteredColors = colorsArray.filter(color => color.name !== "green");
 
 
-// 3. Delete the color with name "green"
+// 4. Add color "Purple" at the beginning
 colorsArray.unshift({id:1,name:"purple"})
 
 

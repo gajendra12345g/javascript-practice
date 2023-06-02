@@ -13,10 +13,25 @@ const colorsArray = [
 const uniqueById = Array.from(new Set(colorsArray.map(color => color.id)))
   .map(id => colorsArray.find(color => color.id === id));
 
+
+// 1. Remove duplicates by id
+const AddUniqueId = [];
+const uniqueId = colorsArray.filter((element) => {
+  const duplicateId = AddUniqueId.includes(element.id);
+  if (!duplicateId) {
+    AddUniqueId.push(element.id);
+    return 1;
+  }
+  return 0;
+});
+console.log(uniqueId);
+
+
 // 2. Remove duplicates by name
 const uniqueByName = Array.from(new Set(colorsArray.map(color => color.name)))
   .map(name => colorsArray.find(color => color.name === name));
 
+  
 // 3. Delete the color with name "green"
 const filteredColors = colorsArray.filter(color => color.name !== "green");
 
